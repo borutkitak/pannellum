@@ -1862,6 +1862,12 @@ window.pannellum = (function(window, document, undefined) {
         var span = document.createElement('span');
         if (hs.text)
             span.innerHTML = escapeHTML(hs.text);
+
+        if (hs.description) {
+            var p = document.createElement('p');
+            p.innerHTML = escapeHTML(hs.description);
+            span.appendChild(p);
+        }
     
         var a;
         if (hs.video) {
